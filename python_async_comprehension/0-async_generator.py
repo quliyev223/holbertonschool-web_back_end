@@ -8,7 +8,7 @@ from typing import Generator
 
 def async_generator() -> Generator[float, None, None]:
     """
-    Synchronous generator that yields a float between 0 and 10, 10 times
+    Synchronous generator that yields a float between 0 and 10, 10 times.
 
     Return:
         Generator[float, None, None]: yields random float values
