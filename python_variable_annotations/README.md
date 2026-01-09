@@ -204,3 +204,27 @@ to_kv = __import__('7-to_kv').to_kv
 print(to_kv.__annotations__)
 print(to_kv("eggs", 3))
 print(to_kv("school", 0.02))
+
+
+## 8. Complex types - functions
+
+Write a type-annotated function `make_multiplier` that takes a float `multiplier` as argument and returns a function that multiplies a float by `multiplier`.
+
+### Requirements
+- Use type annotations
+- The function must be named `make_multiplier`
+- `multiplier` must be a float
+- The return value must be a function that takes a float and returns a float
+- You may import `Callable` from `typing`
+
+### File
+- **File:** `8-make_multiplier.py`
+
+### Example
+
+```python
+make_multiplier = __import__('8-make_multiplier').make_multiplier
+print(make_multiplier.__annotations__)
+fun = make_multiplier(2.22)
+print("{}".format(fun(2.22)))
+
