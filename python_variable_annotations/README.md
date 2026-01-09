@@ -46,3 +46,31 @@ str2 = "shell"
 
 print(concat(str1, str2) == "{}{}".format(str1, str2))
 print(concat.__annotations__)
+
+## 2. Basic annotations - floor
+
+Write a type-annotated function `floor` which takes a float `n` as argument and returns the floor of the float.
+
+### Requirements
+- Use type annotations
+- The function must be named `floor`
+- `n` must be a float
+- The return value must be an integer
+- You may import the `math` module
+
+### File
+- **File:** `2-floor.py`
+
+### Example
+
+```python
+import math
+
+floor = __import__('2-floor').floor
+
+ans = floor(3.14)
+
+print(ans == math.floor(3.14))
+print(floor.__annotations__)
+print("floor(3.14) returns {}, which is a {}".format(ans, type(ans)))
+
