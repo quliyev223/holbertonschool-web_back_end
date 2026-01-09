@@ -74,3 +74,27 @@ print(ans == math.floor(3.14))
 print(floor.__annotations__)
 print("floor(3.14) returns {}, which is a {}".format(ans, type(ans)))
 
+## 3. Basic annotations - to_str
+
+Write a type-annotated function `to_str` that takes a float `n` as argument and returns the string representation of the float.
+
+### Requirements
+- Use type annotations
+- The function must be named `to_str`
+- `n` must be a float
+- The return value must be a string
+- You are not allowed to import any module
+
+### File
+- **File:** `3-to_str.py`
+
+### Example
+
+```python
+to_str = __import__('3-to_str').to_str
+
+pi_str = to_str(3.14)
+print(pi_str == str(3.14))
+print(to_str.__annotations__)
+print("to_str(3.14) returns {} which is a {}".format(pi_str, type(pi_str)))
+
