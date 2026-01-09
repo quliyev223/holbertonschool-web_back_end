@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 """Async comprehension example using async_generator"""
 
-import asyncio
 from typing import List
-from 0-async_generator import async_generator  # import the async generator from previous task
+from async_generator import async_generator  # import the async generator from previous task
 
 
 async def async_comprehension() -> List[float]:
