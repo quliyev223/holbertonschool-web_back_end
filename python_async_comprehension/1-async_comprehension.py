@@ -2,7 +2,9 @@
 """Async comprehension example using async_generator"""
 
 from typing import List
-from async_generator import async_generator  # import the async generator from previous task
+
+# Dynamic import to work with checker
+async_generator = __import__('0-async_generator').async_generator
 
 
 async def async_comprehension() -> List[float]:
