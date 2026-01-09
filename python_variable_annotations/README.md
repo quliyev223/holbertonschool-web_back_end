@@ -178,3 +178,29 @@ ans = sum_mixed_list(mixed)
 print(sum_mixed_list.__annotations__)
 print(ans == sum(mixed))
 print("sum_mixed_list(mixed) returns {} which is a {}".format(ans, type(ans)))
+
+## 7. Complex types - string and int/float to tuple
+
+Write a type-annotated function `to_kv` that takes a string `k` and an int OR float `v` as arguments and returns a tuple.  
+- The first element of the tuple is the string `k`.  
+- The second element is the square of `v` and should be annotated as a float.
+
+### Requirements
+- Use type annotations
+- The function must be named `to_kv`
+- `k` must be a string
+- `v` must be an int or a float
+- The return value must be a tuple `(str, float)`
+- You may import `Union` and `Tuple` from `typing`
+
+### File
+- **File:** `7-to_kv.py`
+
+### Example
+
+```python
+to_kv = __import__('7-to_kv').to_kv
+
+print(to_kv.__annotations__)
+print(to_kv("eggs", 3))
+print(to_kv("school", 0.02))
