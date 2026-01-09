@@ -228,3 +228,12 @@ print(make_multiplier.__annotations__)
 fun = make_multiplier(2.22)
 print("{}".format(fun(2.22)))
 
+
+## 9. Let's duck type an iterable object
+
+Annotate the below function’s parameters and return values with the appropriate types.
+
+```python
+def element_length(lst):
+    return [(i, len(i)) for i in lst]
+
