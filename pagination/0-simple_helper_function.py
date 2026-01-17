@@ -18,8 +18,8 @@ def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """
     # Start index is the number of items skipped (previous pages * size)
     start_index = (page - 1) * page_size
-    
+
     # End index is the start index plus the current page size
     end_index = page * page_size
-    
+
     return (start_index, end_index)
