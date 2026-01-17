@@ -26,7 +26,7 @@ class Server:
 
     def dataset(self) -> List[List]:
         """Reads and caches the dataset from the CSV file.
-        
+
         Returns:
             List[List]: The cached dataset excluding the header.
         """
