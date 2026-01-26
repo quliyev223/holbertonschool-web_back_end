@@ -1,0 +1,4 @@
+// db - the current database, passed as an option to the mongo command (e.g., mongo my_db)
+// school - the collection whose documents we want to count
+// count() - returns the total number of documents in the collection
+db.school.count()
