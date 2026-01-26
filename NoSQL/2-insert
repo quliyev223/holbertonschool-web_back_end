@@ -1,0 +1,12 @@
+// db -  the current database, passed as an option to the mongo command (e.g., mongo my_db)
+// school -  the collection where we will insert the document
+// insert({...}) - inserts a document into the collection
+
+
+
+// Scrpit that inserts a Doc in the school Collection
+db.school.insert(
+	{
+		name:"Holberton school"
+	}
+)
