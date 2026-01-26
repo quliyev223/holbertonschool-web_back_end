@@ -1,0 +1,5 @@
+// db - the current database, passed as an option to the mongo command (e.g., mongo my_db)
+// school - the collection from which we want to list all documents
+// find() - retrieves all documents in the collection
+db.school.find()
+
