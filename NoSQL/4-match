@@ -1,0 +1,4 @@
+// db — the current database, passed as an option to the mongo command (e.g., mongo my_db)
+// school — the collection to query
+// find({ name: "Holberton school" }) — retrieves all documents where the field 'name' equals "Holberton school"
+db.school.find({ name: "Holberton school" })
