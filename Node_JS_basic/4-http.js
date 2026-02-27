@@ -7,10 +7,10 @@ const http = require('http');
 const app = http.createServer((req, res) => {
   // Set the response status code to 200 (OK)
   res.statusCode = 200;
-  
+ 
   // Set the Content-Type header to plain text
   res.setHeader('Content-Type', 'text/plain');
-  
+
   // Send the body content and signal the end of the response
   res.end('Hello Holberton School!');
 });
