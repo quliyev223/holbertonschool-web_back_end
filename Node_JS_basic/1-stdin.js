@@ -1,15 +1,15 @@
-// Display the prompt
+// Display the welcome message
 process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
-// Listen for data input
-process.stdin.on('readable', function() {
-  var chunk = process.stdin.read();
+// Read input from stdin
+process.stdin.on('readable', () => {
+  const chunk = process.stdin.read();
   if (chunk !== null) {
-    process.stdout.write('Your name is: ' + chunk);
+    process.stdout.write(`Your name is: ${chunk}`);
   }
 });
 
-// Close message when input stream ends
-process.stdin.on('end', function() {
+// Display message on exit
+process.stdin.on('end', () => {
   process.stdout.write('This important software is now closing\n');
 });
