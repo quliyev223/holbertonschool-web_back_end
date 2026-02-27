@@ -11,7 +11,7 @@ function countStudents(path) {
 
     // Split by newline and filter out empty lines or headers
     const lines = data.split('\n').filter((line) => line.trim() !== '');
- 
+
     // Remove the header (first line)
     const studentData = lines.slice(1);
 
@@ -39,4 +39,3 @@ function countStudents(path) {
 }
 
 module.exports = countStudents;
-
