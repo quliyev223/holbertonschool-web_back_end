@@ -17,7 +17,7 @@ function countStudents(path) {
 
       // Process the data once read
       const lines = data.split('\n').filter((line) => line.trim() !== '');
-      
+
       // Remove header row
       const studentData = lines.slice(1);
       const totalStudents = studentData.length;
