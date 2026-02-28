@@ -1,49 +1,43 @@
 const fs = require('fs');
 
-/**
- * Counts students in a CSV file asynchronously.
- * @param {string} path The path to the database file.
- * @returns {Promise<void>}
- */
 function countStudents(path) {
   return new Promise((resolve, reject) => {
-    // Read file asynchronously
+    // Read file asynchronously with utf8 encoding
     fs.readFile(path, 'utf8', (err, data) => {
       if (err) {
-        // If file cannot be read, reject the promise with an error
+        // Reject the promise if the file is missing or unreadable
         reject(new Error('Cannot load the database'));
         return;
       }
 
-      // Process the data once read
+      // Filter out empty lines and split by newline
       const lines = data.split('\n').filter((line) => line.trim() !== '');
-
-      // Remove header row
-      const studentData = lines.slice(1);
-      const totalStudents = studentData.length;
-
-      console.log(`Number of students: ${totalStudents}`);
+      const studentData = lines.slice(1); // Remove header
+      
+      const report = []; // Array to store all output lines
+      const totalMsg = `Number of students: ${studentData.length}`;
+      
+      console.log(totalMsg);
+      report.push(totalMsg);
 
       const fields = {};
-
       studentData.forEach((line) => {
         const student = line.split(',');
-        // Column 0 is firstname, Column 3 is field
         const firstName = student[0];
         const field = student[3];
 
-        if (!fields[field]) {
-          fields[field] = [];
-        }
+        if (!fields[field]) fields[field] = [];
         fields[field].push(firstName);
       });
 
       for (const [field, names] of Object.entries(fields)) {
-        console.log(`Number of students in ${field}: ${names.length}. List: ${names.join(', ')}`);
+        const fieldMsg = `Number of students in ${field}: ${names.length}. List: ${names.join(', ')}`;
+        console.log(fieldMsg);
+        report.push(fieldMsg);
       }
 
-      // Resolve the promise when everything is logged
-      resolve();
+      // Resolve the promise with the full report as a single string
+      resolve(report.join('\n'));
     });
   });
 }
