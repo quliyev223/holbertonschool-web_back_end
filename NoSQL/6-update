@@ -1,0 +1,11 @@
+// This is a MongoDB shell script, not Python
+// Run it with: cat 6-update | mongo my_db
+
+db.school.update(
+    // Filter: find all documents where name equals "Holberton school"
+    { "name": "Holberton school" },
+    // $set operator: add/replace the "address" field without touching other fields
+    { $set: { "address": "972 Mission street" } },
+    // multi: true means update ALL matching documents, not just the first one
+    { multi: true }
+)
